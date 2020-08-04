@@ -42,6 +42,8 @@ Features:
   6. Update restaurant
   7. Delete restaurant
   8. Search by name
+  9. Sort (name: A->Z / Z->A, category, location)
+  10. Refactor routes
   
 How to use:
   1. Open browser and input localhost:3000/
