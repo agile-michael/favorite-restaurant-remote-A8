@@ -5,12 +5,12 @@ const Restaurant = require('../../models/restaurant')
 
 // 新增(New)(Create)
 router.get('/new', (req, res) => {
-  console.log(req)
+  // console.log(req)
   return res.render('new')
 })
 
 router.post('/', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   const { name, category, image, location, phone, google_map, rating, description } = req.body
   return Restaurant.create({ name, category, image, location, phone, google_map, rating, description })
     .then(() => res.redirect('/'))
@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 
 // 瀏覽 (Read) (Detail)
 router.get('/:_id', (req, res) => {
-  console.log(req.params._id)
+  // console.log(req.params._id)
   const id = req.params._id
   return Restaurant.findById(id)
     .lean()
@@ -29,7 +29,7 @@ router.get('/:_id', (req, res) => {
 
 // Edit
 router.get('/:_id/edit', (req, res) => {
-  console.log(req.params)
+  // console.log(req.params)
   const id = req.params._id
   return Restaurant.findById(id)
     .lean()

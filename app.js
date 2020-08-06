@@ -15,6 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
 
+app.use((req, res, next) => {
+  const date = new Date().toLocaleString('zh-TW')
+  console.log(`${date} | ${req.method} from ${req.url}`)
+  next()
+})
+
 // 設定首頁路由
 app.use(routes)
 
